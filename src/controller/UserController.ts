@@ -18,4 +18,16 @@ export class UserController {
       }
     }
   };
+
+  // Exercício 2:
+  getByAgeRange = (req: Request, res: Response) => {
+    try {
+      const min = Number(req.query.min);
+      const max = Number(req.query.max);
+      const users = this.userBusiness.getByAgeRange(min, max);
+      res.status(200).json({ success: true, data: users });
+    } catch (error: any) {
+      res.status(400).json({ success: false, message: error.message });
+    }
+  };
 }

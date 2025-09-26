@@ -3,7 +3,7 @@ import { users } from "../bd";
 export class UserData {
   buscarUsuarioPorEmail = (email: string) => {
     try {
-      const userFound = users.find((user) => {
+      const userFound = users.filter((user) => {
         return user.email == email;
       });
       return userFound;

@@ -8,4 +8,12 @@ export class UserBusiness {
     if (!user) throw new Error("Usuário não encontrado");
     return user;
   };
+  //Exercício 2:
+  getByAgeRange = (min: number, max: number) => {
+    if (isNaN(min) || isNaN(max))
+      throw new Error("Parâmetros min e max devem ser números");
+    if (min > max)
+      throw new Error("Idade mínima não pode ser maior que a máxima");
+    return users.filter((u) => u.age >= min && u.age <= max);
+  };
 }
