@@ -1,8 +1,7 @@
-import express from 'express'
-import { UserController } from '../controller/userController';
+import express from "express";
+import { UserController } from "../controller/UserController";
 
 export const userRouter = express.Router();
-
 const userController = new UserController();
 
-userRouter.post('/verify', userController.verify)
+userRouter.get("/:id", userController.getById);
