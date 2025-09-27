@@ -14,4 +14,16 @@ export class PostController {
       res.status(400).json({ success: false, message: error.message });
     }
   };
+  // Exercício 5
+
+  patchPost = (req: Request, res: Response) => {
+    try {
+      const id = Number(req.params.id);
+      const payload = req.body;
+      const updated = this.postBusiness.patchPost(id, payload);
+      res.status(200).json({ success: true, data: updated });
+    } catch (error: any) {
+      res.status(400).json({ success: false, message: error.message });
+    }
+  };
 }

@@ -24,10 +24,8 @@ export class PostBusiness {
 
     const { title, content, authorId } = payload;
 
-    // Gera um novo ID
     const newId = posts.length ? Math.max(...posts.map((p) => p.id)) + 1 : 1;
 
-    // Post é criado como published: false
     const newPost: Post = {
       id: newId,
       title,
@@ -39,5 +37,22 @@ export class PostBusiness {
 
     posts.push(newPost);
     return newPost;
+  }
+
+  //Exercício 5
+
+  patchPost(id: number, payload: any) {
+    const idx = posts.findIndex((p) => p.id === id);
+    if (idx === -1) throw new Error("Post não encontrado");
+
+    const allowed = ["title", "content", "published"];
+    for (const k of Object.keys(payload)) {
+      if (!allowed.includes(k)) throw new Error(`Campo ${k} não é permitido`);
+    }
+
+    const post = posts[idx];
+    const updated = { ...post, ...payload };
+    posts[idx] = updated;
+    return updated;
   }
 }

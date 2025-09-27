@@ -6,3 +6,5 @@ const postController = new PostController();
 
 // Exercício 3
 postRouter.post("/", postController.createPost);
+// Exercício 5
+postRouter.patch("/:id", postController.patchPost);
