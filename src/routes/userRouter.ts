@@ -8,3 +8,5 @@ const userController = new UserController();
 userRouter.get("/age-range", userController.getByAgeRange);
 //Exercíio 1:
 userRouter.get("/:id", userController.getById);
+//Exercício 4:
+userRouter.put("/:id", userController.putUpdate);

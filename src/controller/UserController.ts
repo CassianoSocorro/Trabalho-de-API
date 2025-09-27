@@ -30,4 +30,16 @@ export class UserController {
       res.status(400).json({ success: false, message: error.message });
     }
   };
+
+  //Exercício 4
+  putUpdate = (req: Request, res: Response) => {
+    try {
+      const id = Number(req.params.id);
+      const payload = req.body;
+      const updated = this.userBusiness.putUpdate(id, payload);
+      res.status(200).json({ success: true, data: updated });
+    } catch (error: any) {
+      res.status(400).json({ success: false, message: error.message });
+    }
+  };
 }
