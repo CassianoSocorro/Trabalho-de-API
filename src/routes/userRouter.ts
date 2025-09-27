@@ -10,3 +10,5 @@ userRouter.get("/age-range", userController.getByAgeRange);
 userRouter.get("/:id", userController.getById);
 //Exercício 4:
 userRouter.put("/:id", userController.putUpdate);
+//Exercício 7:
+userRouter.delete("/cleanup-inactive", userController.cleanupInactive);

@@ -43,4 +43,19 @@ export class UserBusiness {
     users[idx] = updated;
     return updated;
   };
+  // Exercício 7
+  cleanupInactive = () => {
+    const usersWithPosts = new Set(posts.map((p) => p.authorId));
+
+    const toRemove = users.filter(
+      (u) => !usersWithPosts.has(u.id) && u.role !== "admin"
+    );
+
+    for (const r of toRemove) {
+      const i = users.findIndex((u) => u.id === r.id);
+      if (i !== -1) users.splice(i, 1);
+    }
+
+    return toRemove;
+  };
 }

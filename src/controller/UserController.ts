@@ -42,4 +42,17 @@ export class UserController {
       res.status(400).json({ success: false, message: error.message });
     }
   };
+  //Exercício 7
+  cleanupInactive = (req: Request, res: Response) => {
+    try {
+      const confirm = req.query.confirm === "true";
+
+      if (!confirm) throw new Error("Parâmetro confirm=true é obrigatório");
+
+      const removed = this.userBusiness.cleanupInactive();
+      res.status(200).json({ success: true, removed });
+    } catch (error: any) {
+      res.status(400).json({ success: false, message: error.message });
+    }
+  };
 }
