@@ -26,4 +26,17 @@ export class PostController {
       res.status(400).json({ success: false, message: error.message });
     }
   };
+  // Exercício 6
+
+  deletePost = (req: Request, res: Response) => {
+    try {
+      const id = Number(req.params.id);
+      const userId = Number(req.header("User-Id"));
+
+      this.postBusiness.deletePost(id, userId);
+      res.status(200).json({ success: true, message: "Post removido" });
+    } catch (error: any) {
+      res.status(400).json({ success: false, message: error.message });
+    }
+  };
 }

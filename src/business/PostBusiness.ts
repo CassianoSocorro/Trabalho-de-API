@@ -55,4 +55,25 @@ export class PostBusiness {
     posts[idx] = updated;
     return updated;
   }
+
+  // Exercício 6
+
+  deletePost(id: number, userId: number) {
+    if (!userId || isNaN(userId))
+      throw new Error("User-Id header é obrigatório");
+
+    const post = posts.find((p) => p.id === id);
+    if (!post) throw new Error("Post não localizado");
+
+    const user = users.find((u) => u.id === userId);
+    if (!user) throw new Error("Usuário não existe");
+
+    if (post.authorId !== userId && user.role !== "admin") {
+      throw new Error("Apenas autor ou admin devem remover o post");
+    }
+
+    const i = posts.findIndex((p) => p.id === id);
+    posts.splice(i, 1);
+    return;
+  }
 }

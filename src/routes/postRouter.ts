@@ -8,3 +8,5 @@ const postController = new PostController();
 postRouter.post("/", postController.createPost);
 // Exercício 5
 postRouter.patch("/:id", postController.patchPost);
+// Exercício 6
+postRouter.delete("/:id", postController.deletePost);
