@@ -17,4 +17,4 @@ Commit 7: Implementação do Exercício 6. O foco foi no endpoint DELETE /posts/
 
 Commit 8: Implementação do Exercício 7. Este commit finalizou o último exercício, DELETE /users/cleanup-inactive, implementando a lógica de remoção em lote de usuários inativos.
 
-Commit 9: Refatoração de Arquitetura. Este último commit consolidou os arquivos de inicialização do projeto (app.ts, bd.ts, index.ts) em um único arquivo, server.ts, para simplificar o ponto de entrada e o processo de deploy
+Commit 9: Refatoração de Arquitetura. Este último commit consolidou os arquivos de inicialização do projeto (app.ts, bd.ts, index.ts) em um único arquivo, server.ts, para simplificar o ponto de entrada e o processo de deploy, visando também atender às ordens que foram determinadas.
