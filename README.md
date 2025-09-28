@@ -1,4 +1,4 @@
-Histórico de Desenvolvimento Simplificado
+Histórico de Desenvolvimento Simplificado:
 O projeto foi construído em nove etapas, focando na progressão lógica das funcionalidades e culminando em uma refatoração de arquitetura no final.
 
 Commit 1: Configuração Inicial. Este commit inclui a inicialização do projeto, a instalação de dependências essenciais (npm install), a configuração do tsconfig.json e a criação do .gitignore.
