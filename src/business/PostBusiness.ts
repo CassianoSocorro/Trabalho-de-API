@@ -1,4 +1,4 @@
-import { posts, users, Post } from "../bd";
+import { posts, users, Post } from "../server";
 
 export class PostBusiness {
   private validatePostCreation(payload: any) {

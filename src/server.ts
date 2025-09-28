@@ -69,3 +69,20 @@ export const posts: Post[] = [
     published: true,
   },
 ];
+
+import express from "express";
+import cors from "cors";
+
+export const app = express();
+app.use(express.json());
+app.use(cors());
+
+import { userRouter } from "./routes/userRouter";
+import { postRouter } from "./routes/postRouter";
+
+app.use("/users", userRouter);
+app.use("/posts", postRouter);
+
+app.listen(3003, () => {
+  console.log("Servidor rodando na porta 3003");
+});

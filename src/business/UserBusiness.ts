@@ -1,4 +1,4 @@
-import { users, posts, User, Post } from "../bd";
+import { users, posts, User, Post } from "../server";
 
 export class UserBusiness {
   // Exercício 1:

@@ -1,4 +1,4 @@
-import { users } from "../bd";
+import { users } from "../server";
 
 export class UserData {
   buscarUsuarioPorEmail = (email: string) => {
